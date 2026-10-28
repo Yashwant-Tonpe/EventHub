@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore and discover inter-college events on EventHub.">
+    <title>Explore Events | EventHub</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="explore.css">
+    <script src="../js/events.js" defer></script>
+    <script src="../js/session.js" defer></script>
+    <script src="js/explore-page.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="../index.html" class="logo">
+            <span class="logo-icon">E</span>
+            EventHub
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="../index.html">Home</a>
+            <a href="explore.html" class="active">Explore Events</a>
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="login.html" class="btn btn-outline">Log In</a>
+            <a href="signup.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="explore-hero">
+            <span class="eyebrow">YOUR NEXT OPPORTUNITY</span>
+            <h1>Explore <span>Events.</span></h1>
+            <p>
+                Discover competitions, workshops and experiences
+                happening across colleges.
+            </p>
+
+            <form class="search-box explore-search" id="searchForm">
+                <span aria-hidden="true">⌕</span>
+                <input type="search" id="searchInput"
+                    placeholder="Search events, colleges or locations..."
+                    aria-label="Search events">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </section>
+
+        <section class="explore-layout">
+            <aside class="filter-sidebar">
+                <div class="filter-title">
+                    <h2>Filters</h2>
+                    <button id="resetFilters" class="text-button">Reset</button>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Categories</h3>
+                    <label><input type="checkbox" name="category" value="Technical"> Technical</label>
+                    <label><input type="checkbox" name="category" value="Cultural"> Cultural</label>
+                    <label><input type="checkbox" name="category" value="Sports"> Sports</label>
+                    <label><input type="checkbox" name="category" value="Workshop"> Workshops</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Location</h3>
+                    <select id="locationFilter">
+                        <option value="All">All locations</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Pimpri">Pimpri</option>
+                        <option value="Online">Online</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Entry Fee</h3>
+                    <label><input type="radio" name="fee" value="All" checked> All events</label>
+                    <label><input type="radio" name="fee" value="Free"> Free events</label>
+                    <label><input type="radio" name="fee" value="Paid"> Paid events</label>
+                </div>
+            </aside>
+
+            <div class="explore-results">
+                <div class="results-heading">
+                    <div>
+                        <h2>Discover Events</h2>
+                        <p id="resultsCount" aria-live="polite">Loading events...</p>
+                    </div>
+
+                    <select id="sortSelect" aria-label="Sort events">
+                        <option value="featured">Featured first</option>
+                        <option value="date">Date: earliest first</option>
+                        <option value="name">Name: A–Z</option>
+                        <option value="fee">Free events first</option>
+                    </select>
+                </div>
+
+                <div class="explore-event-grid" id="eventGrid"></div>
+
+                <div class="no-results" id="emptyState" hidden>
+                    <div class="empty-icon">⌕</div>
+                    <h3>No events found</h3>
+                    <p>Try changing your search or filters.</p>
+                    <button class="btn btn-primary" id="emptyReset">
+                        Clear filters
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="../index.html" class="logo">
+            <span class="logo-icon">E</span>
+            EventHub
+        </a>
+        <p>Discover. Participate. Connect.</p>
+        <span>© 2026 EventHub. All rights reserved.</span>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>

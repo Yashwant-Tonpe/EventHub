@@ -1,0 +1,73 @@
+.my-events-main {
+    width: min(1100px, 90%);
+    min-height: 65vh;
+    margin: 0 auto;
+    padding: 65px 0 80px;
+}
+
+.my-events-heading {
+    margin-bottom: 28px;
+}
+
+.my-events-heading h1 {
+    margin-top: 8px;
+    font: 800 clamp(32px, 5vw, 44px)/1.15 "Manrope", sans-serif;
+    letter-spacing: -1.5px;
+}
+
+.my-events-heading p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.my-events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.my-events-grid .event-card {
+    min-width: 0;
+}
+
+.registration-date {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.my-events-state {
+    padding: 55px 20px;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    background: white;
+    text-align: center;
+}
+
+.my-events-state h2 {
+    font: 800 22px "Manrope", sans-serif;
+}
+
+.my-events-state p {
+    margin: 8px 0 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .my-events-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .my-events-main {
+        width: 92%;
+        padding: 45px 0 60px;
+    }
+
+    .my-events-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Event details and registration information on EventHub.">
+    <title>Event Details | EventHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="event-details.css">
+    <script src="../js/events.js" defer></script>
+    <script src="../js/session.js" defer></script>
+    <script src="js/event-details.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo"><span class="logo-icon">E</span>EventHub</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        <nav class="nav-links" id="navLinks">
+            <a href="../index.html">Home</a>
+            <a href="explore.html" class="active">Explore Events</a>
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#about">About</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="login.html" class="btn btn-outline">Log In</a>
+            <a href="signup.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <main class="details-main">
+        <a class="details-back" href="explore.html">&larr; Back to events</a>
+        <section id="eventDetails" hidden>
+            <div class="details-cover event-cover" id="eventCover">
+                <span class="cover-symbol" id="eventSymbol" aria-hidden="true"></span>
+                <span class="event-badge" id="eventCategory"></span>
+            </div>
+            <div class="details-layout">
+                <article class="details-content">
+                    <p class="event-date" id="eventDate"></p>
+                    <h1 id="eventTitle"></h1>
+                    <p class="details-organizer" id="eventOrganizer"></p>
+                    <p class="details-description" id="eventDescription"></p>
+
+                    <section class="details-section">
+                        <h2>What to expect</h2>
+                        <ul id="eventHighlights"></ul>
+                    </section>
+
+                    <section class="details-section">
+                        <h2>Event information</h2>
+                        <dl class="event-facts">
+                            <div><dt>Date</dt><dd id="factDate"></dd></div>
+                            <div><dt>Time</dt><dd id="factTime"></dd></div>
+                            <div><dt>Venue</dt><dd id="factVenue"></dd></div>
+                            <div><dt>Eligibility</dt><dd id="factEligibility"></dd></div>
+                            <div><dt>Registration deadline</dt><dd id="factDeadline"></dd></div>
+                            <div><dt>Entry fee</dt><dd id="factFee"></dd></div>
+                        </dl>
+                    </section>
+                </article>
+
+                <aside class="registration-card">
+                    <span class="eyebrow">JOIN THIS EVENT</span>
+                    <h2>Interested?</h2>
+                    <p class="registration-fee" id="registrationFee"></p>
+                    <form id="registrationForm" class="registration-form">
+                        <button class="btn btn-primary" type="submit">Register Interest</button>
+                        <p id="registrationStatus" class="registration-status" role="status" aria-live="polite"></p>
+                    </form>
+                    <p class="registration-note">You can register with your account once EventHub registration is connected to the secure server.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section id="eventNotFound" class="event-not-found" hidden>
+            <h1>Event not found</h1>
+            <p>That event may have been removed or the link may be incorrect.</p>
+            <a class="btn btn-primary" href="explore.html">Browse events</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="../index.html" class="logo"><span class="logo-icon">E</span>EventHub</a>
+        <p>Discover. Participate. Connect.</p>
+        <span>&copy; 2026 EventHub. All rights reserved.</span>
+    </footer>
+
+</body>
+</html>
